@@ -22,7 +22,7 @@ Actions
 ---------------
 
 		Parse request () => (token, motion)
-	    Authorize request (token) => (citizenship)
+			Authorize request (token) => (citizenship)
 	      If failure (citizenship)
 	        Return Authorization Failed
 	      Throttle motions (citizenship) => (blocked)
