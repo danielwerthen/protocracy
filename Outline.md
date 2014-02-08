@@ -37,56 +37,56 @@ Actions
 2. Vote for motion
 ------------------
 
-  Parse request () => (token, motion, vote)
-    Authorize request (token) => (citizenship)
-      If failure (citizenship)
-        Return Authorization Failed
-      Store vote (citizenship, motion, vote)
-        Return response (OK)
-        Count votes (motion) => (state)
-          If voting complete (state)
-            Notify motion creator (motion, state)
-            Lookup voters (motion) => (voters)
-              Notify voters (voters, motion, state)
+    Parse request () => (token, motion, vote)
+      Authorize request (token) => (citizenship)
+        If failure (citizenship)
+          Return Authorization Failed
+        Store vote (citizenship, motion, vote)
+          Return response (OK)
+          Count votes (motion) => (state)
+            If voting complete (state)
+              Notify motion creator (motion, state)
+              Lookup voters (motion) => (voters)
+                Notify voters (voters, motion, state)
         
 3. Get motions for consideration 
 --------------------------------
 
-Parse request () => (token)
-  Authorize request (token) => (citizenship)
-    If failure (citizenship)
-      Return Authorization Failed
-    Lookup open votes (citizenship) => (motions)
-      Return response (motions)
+    Parse request () => (token)
+      Authorize request (token) => (citizenship)
+        If failure (citizenship)
+          Return Authorization Failed
+        Lookup open votes (citizenship) => (motions)
+          Return response (motions)
 
 
 4. Verify motion
 ----------------
 
-Parse request () => (token, motion)
-  Authorize request (token) => (citizenship)
-    If failure (citizenship)
-      Return Authorization Failed
-    Lookup motion (citizenship) => (motion, state)
-      Return response (motion, state)
+    Parse request () => (token, motion)
+      Authorize request (token) => (citizenship)
+        If failure (citizenship)
+          Return Authorization Failed
+        Lookup motion (citizenship) => (motion, state)
+          Return response (motion, state)
 
 5. Verify vote
 --------------
 
-Parse request () => (token, vote, motion)
-  Authorize request (token) => (citizenship)
-    If failure (citizenship)
-      Return Authorization Failed
-    Lookup motion (motion) => (motion)
-      Verify vote (vote, motion) => (match)
-        Return response (match)
+    Parse request () => (token, vote, motion)
+      Authorize request (token) => (citizenship)
+        If failure (citizenship)
+          Return Authorization Failed
+        Lookup motion (motion) => (motion)
+          Verify vote (vote, motion) => (match)
+            Return response (match)
 
 6. Get passed motions
 ---------------------
 
-Parse request () => (token, dateFrom, dateTo, continueFromMotion)
-  Authorize request (token) => (citizenship)
-    If failure (citizenship)
-      Return Authorization Failed
-    Query motions (dateFrom, dateTo, continueFromMotion) => (motions)
-      Return response (motions)
+    Parse request () => (token, dateFrom, dateTo, continueFromMotion)
+      Authorize request (token) => (citizenship)
+        If failure (citizenship)
+          Return Authorization Failed
+        Query motions (dateFrom, dateTo, continueFromMotion) => (motions)
+          Return response (motions)
