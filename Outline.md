@@ -22,7 +22,6 @@ Actions
 ---------------
 
     Parse request () => (token, motion)
-  
     Authorize request (token) => (citizenship)
       If failure (citizenship)
         Return Authorization Failed
