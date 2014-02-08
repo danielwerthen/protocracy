@@ -21,18 +21,18 @@ Actions
 1. Place motion
 ---------------
 
-    Parse request () => (token, motion)
-    Authorize request (token) => (citizenship)
-      If failure (citizenship)
-        Return Authorization Failed
-      Throttle motions (citizenship) => (blocked)
-        If (blocked)
-          Return Motion Throttle block
-        If Not (blocked)
-          Store motion (citizenship, motion) => (motion)
-            Return response (motion)
-            Create motion vote context (motion) => (voters)
-              Notify voters (voters, motion)
+		Parse request () => (token, motion)
+	    Authorize request (token) => (citizenship)
+	      If failure (citizenship)
+	        Return Authorization Failed
+	      Throttle motions (citizenship) => (blocked)
+	        If (blocked)
+	          Return Motion Throttle block
+	        If Not (blocked)
+	          Store motion (citizenship, motion) => (motion)
+	            Return response (motion)
+	            Create motion vote context (motion) => (voters)
+	              Notify voters (voters, motion)
 
 2. Vote for motion
 ------------------
